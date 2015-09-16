@@ -65,7 +65,7 @@ public class NewsFragment extends ListFragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d(TAG, response.toString());
+                        //Log.d(TAG, response.toString());
                         hidePDialog();
 
                         // Parsing json
@@ -80,7 +80,7 @@ public class NewsFragment extends ListFragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                //VolleyLog.d(TAG, "Error: " + error.getMessage());
                 hidePDialog();
 
             }
@@ -94,6 +94,7 @@ public class NewsFragment extends ListFragment {
     public void onDestroy() {
         super.onDestroy();
         hidePDialog();
+        pDialog.dismiss();
     }
 
     @Override

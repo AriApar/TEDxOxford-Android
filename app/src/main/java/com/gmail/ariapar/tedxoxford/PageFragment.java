@@ -63,7 +63,7 @@ public class PageFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d(TAG, response.toString());
+                        //Log.d(TAG, response.toString());
                         hidePDialog();
 
                         // Parsing json
@@ -79,7 +79,7 @@ public class PageFragment extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                //VolleyLog.d(TAG, "Error: " + error.getMessage());
                 hidePDialog();
 
             }
@@ -93,12 +93,13 @@ public class PageFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         hidePDialog();
+        pDialog.dismiss();
     }
 
     private void hidePDialog() {
         if (pDialog != null) {
             pDialog.hide();
-            pDialog = null;
+            //pDialog = null;
         }
     }
 

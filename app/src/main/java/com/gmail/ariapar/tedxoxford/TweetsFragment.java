@@ -81,8 +81,10 @@ public class TweetsFragment extends Fragment {
 
     @Override
     public void onDestroy() {
+
         super.onDestroy();
         hidePDialog();
+        pDialog.dismiss();
     }
 
     private void hidePDialog() {
@@ -90,6 +92,4 @@ public class TweetsFragment extends Fragment {
             pDialog.hide();
         }
     }
-
-
 }

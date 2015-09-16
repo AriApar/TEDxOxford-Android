@@ -27,12 +27,13 @@ public class MainActivity extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    private Handler handler;
 
     protected Fragment fragment = null;
     //private boolean started = false;
     private ArrayList<Fragment> frList = new ArrayList<Fragment>();
 
-    private static int AD_TIME_OUT = 5000;
+    private static int AD_TIME_OUT = 60000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,9 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler();
+
+        handler.postDelayed(new Runnable() {
 
             /*
              * Showing splash screen with a timer. This will be useful when you
@@ -169,10 +172,7 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if (id == R.id.action_refresh){
+        if (id == R.id.action_refresh){
             fragment.onOptionsItemSelected(item);
             return true;
         }
@@ -183,6 +183,7 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() == 0) {
+            handler.removeCallbacksAndMessages(null);
             this.finish();
         } else {
             getFragmentManager().popBackStack();

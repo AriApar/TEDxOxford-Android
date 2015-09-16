@@ -22,6 +22,6 @@
     <string name="contactUsText">If you\'d like to learn more about TEDxOxford, you can send us a mail at contact@tedxoxford.co.uk \n\n Found a bug? Let us know via webmaster@tedxoxford.co.uk \n\n Find us on Facebook: https://www.facebook.com/TEDxOxford \n\n Find us on Twitter: https://twitter.com/tedxoxford \n\n Find us on YouTube: https://www.youtube.com/user/tedxoxford \n\n\n\n</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="title_activity_ad_screen">AdScreen</string>
-    <string name="close_button">Close Ad</string>
+    <string name="close_button">X</string>
 
 </resources>

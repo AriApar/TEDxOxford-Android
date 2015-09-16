@@ -40,7 +40,7 @@ public class NewsDataBuilder {
                     //Set content
                     if (!item.isNull("content")) {
                         String c = item.getString("content");
-                        String content = "<html><head><style>img{width:100%%;height:auto}" +
+                        String content = "<html><head><style>img{max-width:100%%;height:auto }" +
                                 "iframe{width:100%%;}.aspect-ratio {position: relative;width: 100%%;" +
                                 "height: 0;padding-bottom: 56.25%%;}.aspect-ratio iframe {width: 100%%;" +
                                 "height: 100%%;};</style></head><body><div class=aspect-ratio>" +
